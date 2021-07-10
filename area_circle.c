@@ -42,7 +42,7 @@ int main(){
 		AreaofTriangle();
 		break;
 	default:
-		printf("Invalid Input");
+		printf("Invalid Input\n");
 		break;
 	}
 	return 0;		
