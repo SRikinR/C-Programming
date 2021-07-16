@@ -25,9 +25,19 @@ int printArray(int arr[],int size){
 	printf("\n");
 }
 
+int NegativeValue(int arr[], int size){
+	printf("Negative Value in Arrays are: ");
+	for(int i=0; i<size;i++){
+		if(arr[i]<0){
+			printf("%d ",arr[i]);
+		}
+	}
+}
+
+
 int main(){
-	int arr[100]={1,2,2,3,4,5,6,7,7};
-	int size=9;
+	int arr[100]={1,2,2,3,4,5,6,7,7,-5,-6};
+	int size=11;
 	
 	printf("Original ");
 	printArray(arr,size);
@@ -38,5 +48,16 @@ int main(){
 	printf("Modified ");
 	printArray(arr,size);
 	
+	NegativeValue(arr,size);
+	printf("\n");
+		
+	
 	return 0;
 }
+
+
+
+
+
+
+
