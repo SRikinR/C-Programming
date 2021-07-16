@@ -2,6 +2,8 @@
 
 int count=0;
 
+
+// Value Addition
 int valueDetection(int arr[],int size){
 
 	for(int i =0; i<size; i++){
@@ -17,6 +19,7 @@ int valueDetection(int arr[],int size){
 	printf("Count: %d\n",count);
 }
 
+//print array
 int printArray(int arr[],int size){
 	printf("Array: ");
 	for(int i=0; i<size; i++){
@@ -25,6 +28,8 @@ int printArray(int arr[],int size){
 	printf("\n");
 }
 
+
+// shows negative value 
 int NegativeValue(int arr[], int size){
 	printf("Negative Value in Arrays are: ");
 	for(int i=0; i<size;i++){
