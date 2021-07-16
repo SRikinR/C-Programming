@@ -40,9 +40,21 @@ int NegativeValue(int arr[], int size){
 }
 
 
+int addition(int arr[],int i, int size){
+	int add=0;
+	int temp;
+	if(i<size)
+	{
+		 add = arr[i] + addition(arr,i+1,size);
+	}
+	return 0;
+}
+
 int main(){
-	int arr[100]={1,2,2,3,4,5,6,7,7,-5,-6};
-	int size=11;
+	//int arr[100]={1,2,2,3,4,5,6,7,7,-5,-6};
+	//int size=11;
+	int arr[100]={1,2,2,-2};
+	int size=3;
 	
 	printf("Original ");
 	printArray(arr,size);
@@ -56,6 +68,7 @@ int main(){
 	NegativeValue(arr,size);
 	printf("\n");
 		
+	addition(arr,0,11);
 	
 	return 0;
 }
