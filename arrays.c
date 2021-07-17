@@ -50,9 +50,9 @@ int addition(int arr[],int i, int size){
 	int add=0;
 	int temp,temp1;
 	if(i>=size){
-	return 0; 
+		return 0; 
 	}
-	return (arr[i]  + addition(arr,i+1,size));
+		return (arr[i]  + addition(arr,i+1,size));
 }
 
 
@@ -82,9 +82,25 @@ int minArray(int arr[], int i, int size){
 	}
 }
 
+// Second Largest Element
+int secondLargest(int arr[],int i, int size, int maxElement){
+	/*int sub = maxElement/arr[i];
+	printf("---->%d",sub);
+	int sub1 = maxElement/arr[i+1];
+	printf("---->%d",sub1); */
+	
+	
+	if((maxElement/arr[i])<(secondLargest(arr,i+1,size,maxElement))){
+		return arr[i];
+	}
+	else{
+		return secondLargest(arr,i+1,size,maxElement);
+	}
+}
+
 int main(){
-	int arr[100]={1,2,2,3,44,5,6,-17,7,-5,-6};
-	int size=11;
+	int arr[100]={1,2,3,44,5,6,-17,7,-5,-6};
+	int size=10;
 	//int arr[100]={1,2,2,-3,4};
 	//int size=5;
 	
@@ -108,6 +124,11 @@ int main(){
 	
 	int minElement =minArray(arr,0,size);
 	printf("Minimum Element of an array: %d\n", minElement);
+	
+	int secondMax= secondLargest(arr,0,size,maxElement);
+	printf("Second Largest Element in an Array: %d\n", secondMax);
+	
+
 	
 	return 0;
 }
