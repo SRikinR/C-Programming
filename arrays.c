@@ -3,7 +3,7 @@
 int count=0;
 
 
-// Value Addition
+// Value Detection
 int valueDetection(int arr[],int size){
 
 	for(int i =0; i<size; i++){
@@ -40,21 +40,21 @@ int NegativeValue(int arr[], int size){
 }
 
 
+// sum of array
 int addition(int arr[],int i, int size){
 	int add=0;
-	int temp;
-	if(i<size)
-	{
-		 add = arr[i] + addition(arr,i+1,size);
+	int temp,temp1;
+	if(i>=size){
+	return 0; 
 	}
-	return 0;
+	return (arr[i]  + addition(arr,i+1,size));
 }
 
 int main(){
-	//int arr[100]={1,2,2,3,4,5,6,7,7,-5,-6};
-	//int size=11;
-	int arr[100]={1,2,2,-2};
-	int size=3;
+	int arr[100]={1,2,13,3,4,5,6,17,7,-5,-6};
+	int size=11;
+	//int arr[100]={1,2,2,-3,4};
+	//int size=5;
 	
 	printf("Original ");
 	printArray(arr,size);
@@ -67,8 +67,9 @@ int main(){
 	
 	NegativeValue(arr,size);
 	printf("\n");
-		
-	addition(arr,0,11);
+	
+	int sumofarray = addition(arr,0,11);
+	printf("Addition of all Elements: %d\n",sumofarray);
 	
 	return 0;
 }
