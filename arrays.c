@@ -16,7 +16,12 @@ int valueDetection(int arr[],int size){
 			size--; // so that, null index at the end after above deletation dosen't count
 		}
 	}
+	if(count == 0){
+		printf("Count: %d, No Repeated Element in an array.\n", count);
+	}
+	else{
 	printf("Count: %d\n",count);
+	}
 }
 
 //print array
@@ -50,8 +55,35 @@ int addition(int arr[],int i, int size){
 	return (arr[i]  + addition(arr,i+1,size));
 }
 
+
+// Maximum element in an array
+int maxArray(int arr[], int i, int size){
+	if(i>=size){
+		return 0;
+	}
+	if(arr[i]> maxArray(arr,i+1,size)){
+		return arr[i];
+	}
+	else{
+		return maxArray(arr,i+1,size);
+	}
+}
+
+// Minimum element in an array
+int minArray(int arr[], int i, int size){
+	if(i>=size){
+		return 0;
+	}
+	if(arr[i]<minArray(arr,i+1,size)){
+		return arr[i];
+	}
+	else{
+		return minArray(arr,i+1,size);
+	}
+}
+
 int main(){
-	int arr[100]={1,2,13,3,4,5,6,17,7,-5,-6};
+	int arr[100]={1,2,2,3,44,5,6,-17,7,-5,-6};
 	int size=11;
 	//int arr[100]={1,2,2,-3,4};
 	//int size=5;
@@ -70,6 +102,12 @@ int main(){
 	
 	int sumofarray = addition(arr,0,11);
 	printf("Addition of all Elements: %d\n",sumofarray);
+	
+	int maxElement =maxArray(arr,0,size);
+	printf("Maximum Element of an array: %d\n", maxElement);
+	
+	int minElement =minArray(arr,0,size);
+	printf("Minimum Element of an array: %d\n", minElement);
 	
 	return 0;
 }
