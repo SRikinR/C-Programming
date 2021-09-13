@@ -128,8 +128,6 @@ int main(){
 	int secondMax= secondLargest(arr,0,size,maxElement);
 	printf("Second Largest Element in an Array: %d\n", secondMax);
 	
-
-	
 	return 0;
 }
 
