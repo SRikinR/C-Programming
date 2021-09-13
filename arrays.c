@@ -33,7 +33,6 @@ int printArray(int arr[],int size){
 	printf("\n");
 }
 
-
 // shows negative value 
 int NegativeValue(int arr[], int size){
 	printf("Negative Value in Arrays are: ");
